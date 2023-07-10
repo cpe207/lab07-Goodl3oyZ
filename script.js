@@ -51,14 +51,14 @@ submitBtn.onclick = () => {
   let EmailOk = false;
   if (validateEmail(EmailInput.value)) {
     EmailInput.classList.add("is-valid");
+    Correctpart += 1;
+    EmailOk = true;
   } else {
     EmailInput.classList.add("is-invalid");
-    EmailOk = true;
-    Correctpart += 1;
   }
 
   let PassOk = false;
-  if (PassInput.value === "" && PassInput.value >= 6) {
+  if (PassInput.value.length < 6) {
     PassInput.classList.add("is-invalid");
   } else {
     PassInput.classList.add("is-valid");
@@ -67,6 +67,6 @@ submitBtn.onclick = () => {
   }
 
   if (Correctpart === 4) {
-    alert("Registed Successfull");
+    alert("Registed Successfully!");
   }
 };
